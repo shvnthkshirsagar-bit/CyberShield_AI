@@ -1,5 +1,5 @@
 import streamlit as st
-
+from realtime_monitor import realtime_monitor_page
 from visualization import visualization_page
 from prediction import prediction_page
 from feature_importance import feature_importance_page
@@ -23,19 +23,20 @@ st.sidebar.title("🛡️ CyberShield AI")
 page = st.sidebar.radio(
     "Navigation",
     [
-        "🏠 Home",
-        "📊 Data Visualization",
-        "🤖 Threat Prediction",
-        "📈 Feature Importance",
-        "📉 Model Performance",
-        "ℹ️ About"
+        "Home",
+        "Prediction",
+        "Visualization",
+        "Feature Importance",
+        "Model Performance",
+        "Real-Time Monitoring",
+        "About"
     ]
 )
 
 # -----------------------------
 # Home Page
 # -----------------------------
-if page == "🏠 Home":
+if page == "Home":
 
     st.title("🛡️ CyberShield AI")
     st.subheader("AI-Powered Cyber Threat Detection System")
@@ -66,6 +67,8 @@ CyberShield AI is an Artificial Intelligence based Cyber Threat Detection System
 ✅ Model Performance Evaluation
 
 ✅ Interactive Prediction Dashboard
+
+✅ Real-Time Monitoring
 """)
 
     st.markdown("---")
@@ -82,34 +85,29 @@ CyberShield AI is an Artificial Intelligence based Cyber Threat Detection System
 4. Evaluate Model
 
 5. Predict Cyber Threats
+
+6. Real-Time Monitoring
 """)
 
-    st.success("Project Ready Successfully")
-
-elif page == "📊 Data Visualization":
-    visualization_page()
+    st.success("✅ Project Ready Successfully")
 
 # -----------------------------
-# Threat Prediction
+# Other Pages
 # -----------------------------
-
-elif page == "🤖 Threat Prediction":
+elif page == "Prediction":
     prediction_page()
 
-# -----------------------------
-# Feature Importance
-# -----------------------------
-elif page == "📈 Feature Importance":
+elif page == "Visualization":
+    visualization_page()
+
+elif page == "Feature Importance":
     feature_importance_page()
 
-# -----------------------------
-# Model Performance
-# -----------------------------
-elif page == "📉 Model Performance":
+elif page == "Model Performance":
     model_performance_page()
 
-# -----------------------------
-# About
-# -----------------------------
-elif page == "ℹ️ About":
+elif page == "Real-Time Monitoring":
+    realtime_monitor_page()
+
+elif page == "About":
     about_page()
